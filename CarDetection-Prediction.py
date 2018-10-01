@@ -1,47 +1,25 @@
 
 # coding: utf-8
-
-# In[1]:
-
-
 # Model Predict and analyte :
-
-
-# In[2]:
-
-
+# by Wyv3rn
 from PIL import Image
 from PIL import ImageDraw
 import matplotlib.pyplot as plt
 import keras.models as models
 import numpy as np
 
-
-# In[5]:
-
-
+# Load youre Keras Model
 filename = "YourKerasModel.h5"
 model = models.load_model(filename)
 
-
-# In[6]:
-
-
 # Load Image for Predict | Choose to your Own Picture
 img = Image.open("ChangeMe.jpg")
-
-
-# In[7]:
 
 
 size = 100
 step_size = 50
 cars = []
 cars_drawn = []
-
-
-# In[8]:
-
 
 for x in range(0,img.size[0] - size, step_size):
     for y in range(0, img.size[1] - size, step_size):
@@ -72,12 +50,7 @@ for car in cars:
 
         draw.line(points, "yellow", 2)
         cars_drawn.append(car)
-    
-
-
-# In[11]:
-
-
+# Print Outfile name | and save it | plot Drawn Image
 print("[Saved]Picture saved as -> Output.jpg")
 out.save("Output.jpg", quallty=90)
 plt.imshow(out)
