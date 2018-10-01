@@ -1,20 +1,7 @@
 
 # coding: utf-8
-
-# In[1]:
-
-
 # Car Detection | Cifar10 | GPU Based | CNN
-
-
-# In[2]:
-
-
-# Using GPU :
-
-
-# In[6]:
-
+# by Wyv3rn
 
 import os
 from keras.datasets import cifar10
@@ -22,23 +9,16 @@ import matplotlib.pyplot as plt
 from keras.models import Sequential
 from keras.layers import Dense, Conv2D , MaxPooling2D, Flatten, Dropout
 import numpy as np 
-
+# Using GPU :
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 # The GPU id to use, usually either "0" or "1"
 os.environ["CUDA_VISIBLE_DEVICES"]="1"
-
-
-# In[ ]:
-
 
 # Load Train Data
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 
 X_train = X_train.astype(np.float32) / 255.
 X_test = X_test.astype(np.float32) / 255.
-
-
-# In[ ]:
 
 
 # Create Model :
@@ -85,12 +65,7 @@ model.add(Dense(1, activation="sigmoid"))
 # by One Output only use := binary_crossentropy
 model.compile(optimizer="rmsprop", loss="binary_crossentropy" , metrics=["accuracy"])
 
-
-# In[ ]:
-
-
 # Train Model with Parameter y_train and if y_train = 1 sein say True
-
 y_train_car = y_train == 1
 
 # Shuffle=True | mix data for better learning
@@ -102,10 +77,6 @@ model.fit(
     shuffle=True
 )
 
-
-# In[ ]:
-
-
 # Evaluate the Network
 print("\Traindata : \n")
 print(model.evaluate(X_train, y_train_car))
@@ -113,4 +84,3 @@ print(model.evaluate(X_train, y_train_car))
 y_test_car = y_test == 1
 print("\Testdata : \n")
 print(model.evaluate(X_test, y_test_car))
-
