@@ -11,8 +11,20 @@ os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 ```
 The GPU id to use, usually either "0" or "1"
 Change this number to 0 if you have only 0(Zero) if you have only 1 GPU
+Another Option for MultiGPU using is to make the next line to a list
+
+Use One GPU
 ```
 os.environ["CUDA_VISIBLE_DEVICES"]="1"
+```
+Use Mutible :
+```
+os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
+```
+if you have more than 2 GPU expand the list like 0,1,2,3 etc etc
+if you want only to use from the second GPU UP to  writte
+```
+os.environ["CUDA_VISIBLE_DEVICES"]="1,2,3"
 ```
 
 --------------------------------------------------------
