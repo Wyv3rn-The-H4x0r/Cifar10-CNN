@@ -8,11 +8,12 @@ A Little Help to Setup GPU/CPU and/or MultiGPU Using :
 # ----------------------------- #
 # Change From GPU to another GPU or CPU :
 
-##########
+# -------
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 # The GPU id to use, usually either "0" or "1"
-os.environ["CUDA_VISIBLE_DEVICES"]="1" <------- Change this number to 0 if you have only 0(Zero) if you have only 1 GPU
-########## 
+# Change this number to 0 if you have only 0(Zero) if you have only 1 GPU
+os.environ["CUDA_VISIBLE_DEVICES"]="1"
+#---
 
 
 # ----------------------------- #
@@ -20,7 +21,6 @@ os.environ["CUDA_VISIBLE_DEVICES"]="1" <------- Change this number to 0 if you h
 # use this Line in a Seperate Code or in Jupyter Notebook :
 
 print(device_lib.list_local_devices())
-
 
 # ----------------------------- #
 # For Use CPU only but with MultiCore Support import this lines and Delete the os.eviron lines
