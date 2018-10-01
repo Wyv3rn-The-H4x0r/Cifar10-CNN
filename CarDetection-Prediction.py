@@ -50,6 +50,7 @@ for car in cars:
 
         draw.line(points, "yellow", 2)
         cars_drawn.append(car)
+        
 # Print Outfile name | and save it | plot Drawn Image
 print("[Saved]Picture saved as -> Output.jpg")
 out.save("Output.jpg", quallty=90)
