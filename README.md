@@ -60,7 +60,7 @@ from keras.utils import multi_gpu_model
 Replicates `model` on 8 GPUs.
 This assumes that your machine has 8 available GPUs.
 ```
-parallel_model = multi_gpu_model(model, gpus=1)
+parallel_model = multi_gpu_model(model, gpus=8)
 parallel_model.compile(loss='categorical_crossentropy',
                        optimizer='rmsprop')
 ```
